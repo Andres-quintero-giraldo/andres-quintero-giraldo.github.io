@@ -1,6 +1,147 @@
-body {
-    font-family: arial, sans-serif;
-    text-aling: center;
-    background-color: #f0f0f0;
-    color: #333;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:#0d0d0d;
+    color:white;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:#141414;
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#ff0066;
+}
+
+.menu a{
+    margin-left:25px;
+    text-decoration:none;
+    color:#ccc;
+}
+
+.menu a:hover{
+    color:white;
+}
+
+.btn-login{
+    background:#ff0066;
+    padding:8px 15px;
+    border-radius:20px;
+    color:white !important;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+/* GRID */
+.contenedor-cards{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:25px;
+    padding:40px 60px;
+}
+
+/* CARD */
+.card{
+    position:relative;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.3s;
+    background:#141414;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* IMAGEN 16:9 */
+.card img{
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    display:block;
+}
+
+/* BADGE */
+.badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:red;
+    font-size:12px;
+    padding:5px 12px;
+    border-radius:20px;
+    z-index:3;
+}
+
+/* OVERLAY */
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    opacity:0.7;
+}
+
+/* CENTER BUTTON */
+.center-button{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background:#ff0066;
+    padding:12px 20px;
+    border-radius:30px;
+    opacity:0;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.card:hover .center-button{
+    opacity:1;
+}
+
+/* INFO */
+.info{
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    z-index:2;
+}
+
+.info span{
+    color:#ccc;
+    font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .contenedor-cards{
+        grid-template-columns:1fr;
+        padding:20px;
+    }
 }
